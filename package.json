@@ -1,0 +1,70 @@
+{
+    "name": "n8n-nodes-freelo",
+    "version": "1.0.0",
+    "description": "Custom Freelo integration nodes for n8n",
+    "license": "MIT",
+    "homepage": "https://www.freelo.io",
+    "keywords": [
+        "n8n",
+        "n8n-community-node-package",
+        "freelo",
+        "project-management",
+        "task-management",
+        "time-tracking",
+        "automation",
+        "workflow",
+        "productivity",
+        "collaboration",
+        "team-management",
+        "freelo-api"
+    ],
+    "author": {
+        "name": "Freelo Bay s.r.o.",
+        "email": "info@freelo.io",
+        "url": "https://www.freelo.io"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/freeloapp/n8n.git"
+    },
+    "scripts": {
+        "build": "n8n-node build",
+        "build:watch": "tsc --watch",
+        "dev": "n8n-node dev",
+        "lint": "n8n-node lint",
+        "lint:fix": "n8n-node lint --fix",
+        "release": "n8n-node release",
+        "prepublishOnly": "n8n-node prerelease"
+    },
+    "files": [
+        "dist"
+    ],
+    "n8n": {
+        "n8nNodesApiVersion": 1,
+        "strict": true,
+        "credentials": [
+            "dist/credentials/FreeloApi.credentials.js"
+        ],
+        "nodes": [
+            "dist/nodes/Freelo/Freelo.node.js"
+        ]
+    },
+    "devDependencies": {
+        "@n8n/node-cli": ">=0.17.0",
+        "eslint": "9.32.0",
+        "prettier": "3.6.2",
+        "release-it": "^19.0.4",
+        "typescript": "5.9.2"
+    },
+    "peerDependencies": {
+        "n8n-workflow": ">=2.0.0"
+    },
+    "peerDependenciesMeta": {
+        "n8n-workflow": {
+            "optional": true
+        }
+    },
+    "engines": {
+        "node": ">=22"
+    }
+}
