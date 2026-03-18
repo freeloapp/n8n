@@ -1,0 +1,10 @@
+/.vscode/
+node_modules
+dist
+.idea
+.github
+pnpm-lock.yaml
+package-lock.json
+.env
+.env.local
+.DS_Store
