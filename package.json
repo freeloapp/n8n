@@ -1,6 +1,6 @@
 {
     "name": "n8n-nodes-freelo",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Custom Freelo integration nodes for n8n",
     "license": "MIT",
     "homepage": "https://www.freelo.io",
