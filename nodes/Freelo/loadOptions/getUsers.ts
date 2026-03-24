@@ -7,12 +7,12 @@ interface User {
 }
 export async function getUsers(
 	this: ILoadOptionsFunctions,
-): Promise<{ name: string; value: string }[]> {
+): Promise<{ name: string; value: number }[]> {
 	const response = await freeloRequest.call(this, 'GET', `/users`, true);
 	return (
 		response.data?.users?.map((user: User) => ({
 			name: user.fullname,
-			value: String(user.id),
+			value: user.id,
 		})) ?? []
 	);
 }

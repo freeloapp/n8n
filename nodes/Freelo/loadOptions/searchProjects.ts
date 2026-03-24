@@ -12,7 +12,7 @@ export async function searchProjects(
 ): Promise<INodeListSearchResult> {
 	const response = await freeloRequest.call(this, 'GET', '/projects', true);
 
-	let results = (response.data?.projects ?? []).map((project: Project) => ({
+	let results = (response.data?.projects ?? response).map((project: Project) => ({
 		name: project.name,
 		value: String(project.id),
 	}));

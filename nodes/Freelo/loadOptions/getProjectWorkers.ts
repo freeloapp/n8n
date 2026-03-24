@@ -8,8 +8,11 @@ interface User {
 
 export async function getProjectWorkers(
 	this: ILoadOptionsFunctions,
-): Promise<{ name: string; value: string }[]> {
-	const projectParam = this.getCurrentNodeParameter('projectId') as | string | number | { value: string | number };
+): Promise<{ name: string; value: number }[]> {
+	const projectParam = this.getCurrentNodeParameter('projectId') as
+		| string
+		| number
+		| { value: string | number };
 	const projectId = typeof projectParam === 'object' ? projectParam?.value : projectParam;
 
 	if (!projectId) {

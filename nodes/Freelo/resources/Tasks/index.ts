@@ -261,8 +261,6 @@ export const freeloTasks: INodeProperties[] = [
 						method: 'GET',
 						url: '=/project/{{$parameter["projectId"]}}/tasklist/{{$parameter["TaskListId"]}}/tasks',
 					},
-					...paginator,
-					output: makeListOutput('data.tasks'),
 				},
 			},
 		],

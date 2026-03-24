@@ -7,13 +7,13 @@ interface TemplateProject {
 }
 export async function getTemplateProjects(
 	this: ILoadOptionsFunctions,
-): Promise<{ name: string; value: string }[]> {
+): Promise<{ name: string; value: number }[]> {
 	const response = await freeloRequest.call(this, 'GET', '/template-projects', true);
 
 	return (
 		response.data?.template_projects?.map((project: TemplateProject) => ({
 			name: project.name,
-			value: String(project.id),
+			value: project.id,
 		})) ?? []
 	);
 }

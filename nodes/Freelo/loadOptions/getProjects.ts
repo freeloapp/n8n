@@ -7,13 +7,13 @@ interface Project {
 }
 export async function getProjects(
 	this: ILoadOptionsFunctions,
-): Promise<{ name: string; value: string }[]> {
+): Promise<{ name: string; value: number }[]> {
 	const response = await freeloRequest.call(this, 'GET', '/projects', true);
 
 	return (
-		response.data?.projects?.map((project: Project) => ({
+		response.map((project: Project) => ({
 			name: project.name,
-			value: String(project.id),
+			value: project.id
 		})) ?? []
 	);
 }

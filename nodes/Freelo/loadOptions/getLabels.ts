@@ -7,12 +7,12 @@ interface Label {
 }
 export async function getLabels(
 	this: ILoadOptionsFunctions,
-): Promise<{ name: string; value: string }[]> {
+): Promise<{ name: string; value: number }[]> {
 	const response = await freeloRequest.call(this, 'GET', '/project-labels/find-available');
 	return (
 		response.labels?.map((label: Label) => ({
 			name: label.name,
-			value: String(label.id),
+			value: label.id
 		})) ?? []
 	);
 }

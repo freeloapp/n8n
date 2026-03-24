@@ -7,13 +7,13 @@ interface TaskList {
 }
 export async function getTaskLists(
 	this: ILoadOptionsFunctions,
-): Promise<{ name: string; value: string }[]> {
+): Promise<{ name: string; value: number }[]> {
 	const response = await freeloRequest.call(this, 'GET', `/all-tasklists`, true);
 
 	return (
 		response.data?.tasklists?.map((taskList: TaskList) => ({
 			name: taskList.name,
-			value: String(taskList.id),
+			value: taskList.id
 		})) ?? []
 	);
 }

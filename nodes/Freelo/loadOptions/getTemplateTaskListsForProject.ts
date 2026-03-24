@@ -7,7 +7,7 @@ interface TaskList {
 }
 export async function getTemplateTaskListsForProject(
 	this: ILoadOptionsFunctions,
-): Promise<{ name: string; value: string }[]> {
+): Promise<{ name: string; value: number }[]> {
 	const templateId = this.getCurrentNodeParameter('TemplateId') as number;
 	if (!templateId) {
 		return [];
@@ -23,7 +23,7 @@ export async function getTemplateTaskListsForProject(
 	return (
 		response.data?.tasklists?.map((tasklist: TaskList) => ({
 			name: tasklist.name,
-			value: String(tasklist.id),
+			value: tasklist.id,
 		})) ?? []
 	);
 }

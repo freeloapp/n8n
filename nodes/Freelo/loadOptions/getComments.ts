@@ -8,13 +8,13 @@ interface Comment {
 
 export async function getComments(
 	this: ILoadOptionsFunctions,
-): Promise<{ name: string; value: string }[]> {
+): Promise<{ name: string; value: number }[]> {
 	const response = await freeloRequest.call(this, 'GET', '/all-comments', true);
 
 	return (
 		response.data?.comments?.map((comment: Comment) => ({
 			name: comment.content ? comment.content.substring(0, 60) : `Comment #${comment.id}`,
-			value: String(comment.id),
+			value: comment.id,
 		})) ?? []
 	);
 }

@@ -8,7 +8,7 @@ interface Notification {
 
 export async function getNotifications(
 	this: ILoadOptionsFunctions,
-): Promise<{ name: string; value: string }[]> {
+): Promise<{ name: string; value: number }[]> {
 	const response = await freeloRequest.call(this, 'GET', '/all-notifications', true);
 
 	return (
