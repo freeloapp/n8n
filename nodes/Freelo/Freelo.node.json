@@ -2,6 +2,5 @@
 	"node": "n8n-nodes-freelo",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
-	"categories": [ "freelo", "project-management", "task-management", "time-tracking", "automation", "workflow", "productivity", "collaboration", "team-management", "freelo-api"
-	]
+	"categories": ["Productivity"]
 }
