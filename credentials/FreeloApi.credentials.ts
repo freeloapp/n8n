@@ -42,7 +42,7 @@ export class FreeloApi implements ICredentialType {
 	test: ICredentialTestRequest = {
 		request: {
 			method: 'GET',
-			url: 'https://api2.freelo.io/v1/users/me',
+			url: 'https://api.freelo.io/v1/users/me',
 		},
 	};
 }
