@@ -37,7 +37,7 @@ push:
 	@# Stage, commit, push, then revert to local state
 	git add -A
 	git commit -m "chore: prepare for dev publish" --allow-empty || true
-	git push $(GITHUB_REMOTE) $(GITHUB_BRANCH); \
+	git push -f $(GITHUB_REMOTE) $(GITHUB_BRANCH); \
 	push_exit=$$?; \
 	git reset --mixed HEAD~1 > /dev/null; \
 	git checkout -- .; \
