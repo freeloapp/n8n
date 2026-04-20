@@ -57,7 +57,7 @@ export class Freelo implements INodeType {
 			},
 		],
 		requestDefaults: {
-			baseURL: 'https://api2.freelo.io/v1/',
+			baseURL: 'https://api.freelo.io/v1/',
 			headers: {
 				Accept: 'application/json',
 				'Content-Type': 'application/json',
