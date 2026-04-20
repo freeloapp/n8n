@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-freelo",
+	"node": "n8n-nodes-freelo.freelo",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Productivity"]
