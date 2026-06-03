@@ -36,6 +36,5 @@ jobs:
       - name: Build
         run: npm run build
       - name: Publish to npm
+        # Auth via npm trusted publishing (OIDC) — no token needed
         run: npm publish --provenance --ignore-scripts --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
